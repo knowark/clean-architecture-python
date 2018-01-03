@@ -2,12 +2,12 @@
     "docs": [
         {
             "location": "/",
-            "text": "Clean Architecture con Python\n\n\nFor full documentation visit \nmkdocs.org\n.\n\n\n\u00bfQu\u00e9 es?\n\n\n\u00bfCu\u00e1les son sus beneficios?\n\n\n\u00bfEn qu\u00e9 se fundamenta?\n\n\n\u00bfC\u00f3mo implementarla?\n\n\nProyecto de Ejemplo: Todo List",
-            "title": "Clean Architecture con Python"
+            "text": "Clean Architecture con Python\n\n\n\u00bfQu\u00e9 es?\n\n\n\u00bfCu\u00e1les son sus beneficios?\n\n\n\u00bfEn qu\u00e9 se fundamenta?\n\n\n\u00bfC\u00f3mo implementarla?\n\n\nProyecto de Ejemplo: Todo List",
+            "title": "Inicio"
         },
         {
             "location": "/#clean-architecture-con-python",
-            "text": "For full documentation visit  mkdocs.org .",
+            "text": "",
             "title": "Clean Architecture con Python"
         },
         {
@@ -38,12 +38,62 @@
         {
             "location": "/introduccion/",
             "text": "\u00bfQu\u00e9 es Clean Architecture?",
-            "title": "\u00bfQu\u00e9 es Clean Architecture?"
+            "title": "Inicio"
         },
         {
             "location": "/introduccion/#que-es-clean-architecture",
             "text": "",
             "title": "\u00bfQu\u00e9 es Clean Architecture?"
+        },
+        {
+            "location": "/beneficios/",
+            "text": "Beneficios",
+            "title": "Inicio"
+        },
+        {
+            "location": "/beneficios/#beneficios",
+            "text": "",
+            "title": "Beneficios"
+        },
+        {
+            "location": "/fundamentos/",
+            "text": "Fundamentos",
+            "title": "Inicio"
+        },
+        {
+            "location": "/fundamentos/#fundamentos",
+            "text": "",
+            "title": "Fundamentos"
+        },
+        {
+            "location": "/implementacion/",
+            "text": "Implementaci\u00f3n",
+            "title": "Inicio"
+        },
+        {
+            "location": "/implementacion/#implementacion",
+            "text": "",
+            "title": "Implementaci\u00f3n"
+        },
+        {
+            "location": "/sobre/nubark/",
+            "text": "Nubark\n\n\nInformaci\u00f3n para decidir.\n\n\nNubark",
+            "title": "Nosotros"
+        },
+        {
+            "location": "/sobre/nubark/#nubark",
+            "text": "Informaci\u00f3n para decidir.  Nubark",
+            "title": "Nubark"
+        },
+        {
+            "location": "/sobre/licencia/",
+            "text": "Licencia\n\n\nLa documentaci\u00f3n y el c\u00f3digo de este repositorio se encuentra distribuida\nbajo la licencia MIT.\n\n\n\n\nMIT License\n\n\nCopyright (c) 2017 Nubark\n\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\n\nThe above copyright notice and this permission notice shall be included in all\ncopies or substantial portions of the Software.\n\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\nSOFTWARE.",
+            "title": "Licencia"
+        },
+        {
+            "location": "/sobre/licencia/#licencia",
+            "text": "La documentaci\u00f3n y el c\u00f3digo de este repositorio se encuentra distribuida\nbajo la licencia MIT.   MIT License  Copyright (c) 2017 Nubark  Permission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:  The above copyright notice and this permission notice shall be included in all\ncopies or substantial portions of the Software.  THE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\nSOFTWARE.",
+            "title": "Licencia"
         }
     ]
 }
