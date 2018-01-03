@@ -4,10 +4,12 @@ livereload==2.5.1
 Markdown==2.6.10
 MarkupSafe==1.0
 mkdocs==0.17.2
-mkdocs-bootswatch==0.4.0
+mkdocs-material==2.2.6
 mypy==0.560
 pkg-resources==0.0.0
 psutil==5.4.3
+Pygments==2.2.0
+pymdown-extensions==4.7
 PyYAML==3.12
 six==1.11.0
 tornado==4.5.2
