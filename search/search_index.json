@@ -1,0 +1,49 @@
+{
+    "docs": [
+        {
+            "location": "/",
+            "text": "Clean Architecture con Python\n\n\nFor full documentation visit \nmkdocs.org\n.\n\n\n\u00bfQu\u00e9 es?\n\n\n\u00bfCu\u00e1les son sus beneficios?\n\n\n\u00bfEn qu\u00e9 se fundamenta?\n\n\n\u00bfC\u00f3mo implementarla?\n\n\nProyecto de Ejemplo: Todo List",
+            "title": "Clean Architecture con Python"
+        },
+        {
+            "location": "/#clean-architecture-con-python",
+            "text": "For full documentation visit  mkdocs.org .",
+            "title": "Clean Architecture con Python"
+        },
+        {
+            "location": "/#que-es",
+            "text": "",
+            "title": "\u00bfQu\u00e9 es?"
+        },
+        {
+            "location": "/#cuales-son-sus-beneficios",
+            "text": "",
+            "title": "\u00bfCu\u00e1les son sus beneficios?"
+        },
+        {
+            "location": "/#en-que-se-fundamenta",
+            "text": "",
+            "title": "\u00bfEn qu\u00e9 se fundamenta?"
+        },
+        {
+            "location": "/#como-implementarla",
+            "text": "",
+            "title": "\u00bfC\u00f3mo implementarla?"
+        },
+        {
+            "location": "/#proyecto-de-ejemplo-todo-list",
+            "text": "",
+            "title": "Proyecto de Ejemplo: Todo List"
+        },
+        {
+            "location": "/introduccion/",
+            "text": "\u00bfQu\u00e9 es Clean Architecture?",
+            "title": "\u00bfQu\u00e9 es Clean Architecture?"
+        },
+        {
+            "location": "/introduccion/#que-es-clean-architecture",
+            "text": "",
+            "title": "\u00bfQu\u00e9 es Clean Architecture?"
+        }
+    ]
+}
