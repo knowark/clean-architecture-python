@@ -1,7 +1,5 @@
 # Clean Architecture con Python
 
-For full documentation visit [mkdocs.org](http://mkdocs.org).
-
 ## ¿Qué es?
 
 ## ¿Cuáles son sus beneficios?
