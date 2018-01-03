@@ -1,2 +1,9 @@
-site_name: My Docs
+site_name: Clean Architecture con Python
+pages:
+    - Inicio: index.md
+    - Introducción:
+        - Inicio: introduccion/index.md
+    - Sobre:
+        - Nosotros: sobre/nubark.md
+        - Licencia: sobre/licencia.md
 theme: material
