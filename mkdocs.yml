@@ -5,6 +5,8 @@ pages:
         - Inicio: introduccion/index.md
     - Beneficios:
         - Inicio: beneficios/index.md
+    - Fundamentos:
+        - Inicio: fundamentos/index.md
     - Sobre:
         - Nosotros: sobre/nubark.md
         - Licencia: sobre/licencia.md
