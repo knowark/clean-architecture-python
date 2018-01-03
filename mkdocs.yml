@@ -12,4 +12,6 @@ pages:
     - Sobre:
         - Nosotros: sobre/nubark.md
         - Licencia: sobre/licencia.md
+        - Referencias: sobre/referencias.md
+
 theme: material
