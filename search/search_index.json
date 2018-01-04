@@ -57,13 +57,28 @@
         },
         {
             "location": "/fundamentos/",
-            "text": "Fundamentos",
+            "text": "Fundamentos\n\n\nSOLID\n\n\nComponentes\n\n\nDominio",
             "title": "Inicio"
         },
         {
             "location": "/fundamentos/#fundamentos",
             "text": "",
             "title": "Fundamentos"
+        },
+        {
+            "location": "/fundamentos/#solid",
+            "text": "",
+            "title": "SOLID"
+        },
+        {
+            "location": "/fundamentos/#componentes",
+            "text": "",
+            "title": "Componentes"
+        },
+        {
+            "location": "/fundamentos/#dominio",
+            "text": "",
+            "title": "Dominio"
         },
         {
             "location": "/implementacion/",
@@ -94,6 +109,16 @@
             "location": "/sobre/licencia/#licencia",
             "text": "La documentaci\u00f3n y el c\u00f3digo de este repositorio se encuentra distribuida\nbajo la licencia MIT.   MIT License  Copyright (c) 2017 Nubark  Permission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:  The above copyright notice and this permission notice shall be included in all\ncopies or substantial portions of the Software.  THE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\nSOFTWARE.",
             "title": "Licencia"
+        },
+        {
+            "location": "/sobre/referencias/",
+            "text": "Referencias\n\n\n\n\nThe Clean Architecture\n\n\nClean Architecture - A Craftsman's Guide to Software Structure and Design\n\n\nHow to Organize CLEAN ARCHITECTURE to Modular Patterns in 10 Minutes",
+            "title": "Referencias"
+        },
+        {
+            "location": "/sobre/referencias/#referencias",
+            "text": "The Clean Architecture  Clean Architecture - A Craftsman's Guide to Software Structure and Design  How to Organize CLEAN ARCHITECTURE to Modular Patterns in 10 Minutes",
+            "title": "Referencias"
         }
     ]
 }

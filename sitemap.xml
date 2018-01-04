@@ -63,6 +63,12 @@
      <changefreq>daily</changefreq>
     </url>
         
+    <url>
+     <loc>/sobre/referencias/</loc>
+     <lastmod>2018-01-03</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
     
 
 </urlset>
