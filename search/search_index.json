@@ -57,7 +57,7 @@
         },
         {
             "location": "/fundamentos/",
-            "text": "Fundamentos\n\n\nSOLID\n\n\nComponentes\n\n\nDominio",
+            "text": "Fundamentos\n\n\nSOLID\n\n\nComponentes\n\n\nModelado del Dominio",
             "title": "Inicio"
         },
         {
@@ -76,9 +76,9 @@
             "title": "Componentes"
         },
         {
-            "location": "/fundamentos/#dominio",
+            "location": "/fundamentos/#modelado-del-dominio",
             "text": "",
-            "title": "Dominio"
+            "title": "Modelado del Dominio"
         },
         {
             "location": "/implementacion/",
