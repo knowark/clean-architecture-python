@@ -3,8 +3,6 @@ pages:
     - Inicio: index.md
     - Introducción:
         - Inicio: introduccion/index.md
-    - Beneficios:
-        - Inicio: beneficios/index.md
     - Fundamentos:
         - Inicio: fundamentos/index.md
     - Implementación:
