@@ -2,14 +2,16 @@ site_name: Clean Architecture con Python
 pages:
     - Inicio: index.md
     - Introducción:
-        - Inicio: introduccion/index.md
+      - Inicio: introduccion/index.md
     - Fundamentos:
-        - Inicio: fundamentos/index.md
+      - Inicio: fundamentos/index.md
     - Implementación:
-        - Inicio: implementacion/index.md
+      - Inicio: implementacion/index.md
+    - Proyecto:
+      - Inicio: proyecto/index.md
     - Sobre:
-        - Nosotros: sobre/nubark.md
-        - Licencia: sobre/licencia.md
-        - Referencias: sobre/referencias.md
+      - Nosotros: sobre/nubark.md
+      - Licencia: sobre/licencia.md
+      - Referencias: sobre/referencias.md
 
 theme: material
