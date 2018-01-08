@@ -36,3 +36,4 @@ Igualmente, implementaremos algunas restricciones:
 
 - Un proyecto sólo podrá tener una etapa de cierre.
 - No se podrán eliminar tareas en estado de cierre.
+- Habrá un proyecto, entre todos, que se usará por defecto cuando no se especifique alguno en las tareas.
