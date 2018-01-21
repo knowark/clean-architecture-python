@@ -1,6 +1,7 @@
 from abc import ABC, abstractmethod
 from typing import Dict, Optional
 from taskit.application.models.task import Task
+from taskit.application.repositories.errors import EntityNotFoundError
 
 
 class TaskRepository(ABC):
@@ -9,7 +10,7 @@ class TaskRepository(ABC):
         "Add method to be implemented."
 
     @abstractmethod
-    def get(self, uid: str) -> Optional[Task]:
+    def get(self, uid: str) -> Task:
         "Get method to be implemented."
 
 
@@ -20,9 +21,11 @@ class MemoryTaskRepository(TaskRepository):
     def add(self, task: Task) -> bool:
         "Add method to be implemented."
 
-    def get(self, uid: str) -> Optional[Task]:
+    def get(self, uid: str) -> Task:
         "Get method to be implemented."
         task = self.tasks.get(uid)
+        if not task:
+            raise EntityNotFoundError("Task not found.")
         return task
 
     def load(self, tasks_dict: Dict[str, Task]) -> None:

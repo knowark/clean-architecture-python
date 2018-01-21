@@ -1,5 +1,6 @@
-from pytest import fixture
+from pytest import fixture, raises
 from taskit.application.models.task import Task
+from taskit.application.repositories.errors import EntityNotFoundError
 from taskit.application.repositories.task_repository import (
     TaskRepository,
     MemoryTaskRepository)
@@ -40,3 +41,9 @@ def test_memory_task_repository_get(
         memory_task_repository: MemoryTaskRepository) -> None:
     task = memory_task_repository.get('T-3')
     assert task.name == "Clean the kitchen"
+
+
+def test_memory_task_repository_get_not_found(
+        memory_task_repository: MemoryTaskRepository) -> None:
+    with raises(EntityNotFoundError):
+        task = memory_task_repository.get('MISSING')
