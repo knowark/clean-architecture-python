@@ -1,5 +1,5 @@
 from abc import ABC, abstractmethod
-from typing import Dict
+from typing import Dict, Optional
 from taskit.application.models.task import Task
 
 
@@ -9,7 +9,7 @@ class TaskRepository(ABC):
         "Add method to be implemented."
 
     @abstractmethod
-    def get(self, uid: str) -> Task:
+    def get(self, uid: str) -> Optional[Task]:
         "Get method to be implemented."
 
 
@@ -20,8 +20,10 @@ class MemoryTaskRepository(TaskRepository):
     def add(self, task: Task) -> bool:
         "Add method to be implemented."
 
-    def get(self, uid: str) -> Task:
+    def get(self, uid: str) -> Optional[Task]:
         "Get method to be implemented."
+        task = self.tasks.get(uid)
+        return task
 
     def load(self, tasks_dict: Dict[str, Task]) -> None:
         self.tasks = tasks_dict
