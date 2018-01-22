@@ -6,7 +6,7 @@ from taskit.application.repositories.errors import EntityNotFoundError
 
 class TaskRepository(ABC):
     @abstractmethod
-    def add(self, task: Task) -> bool:
+    def add(self, task: Task) -> None:
         "Add method to be implemented."
 
     @abstractmethod
@@ -17,9 +17,12 @@ class TaskRepository(ABC):
 class MemoryTaskRepository(TaskRepository):
     def __init__(self) -> None:
         self.tasks = {}  # type: Dict[str, Task]
+        self.sequence = 1
 
-    def add(self, task: Task) -> bool:
-        "Add method to be implemented."
+    def add(self, task: Task) -> None:
+        task.uid = task.uid or ("T-" + str(self.sequence))
+        self.tasks[task.uid] = task
+        self.sequence += 1
 
     def get(self, uid: str) -> Task:
         "Get method to be implemented."

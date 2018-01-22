@@ -33,6 +33,7 @@ def memory_task_repository() -> MemoryTaskRepository:
         'T-2': Task("Make conference presentation"),
         'T-3': Task("Clean the kitchen")
     }
+    memory_task_repository.sequence = 4
     memory_task_repository.load(tasks_dict)
     return memory_task_repository
 
@@ -47,3 +48,22 @@ def test_memory_task_repository_get_not_found(
         memory_task_repository: MemoryTaskRepository) -> None:
     with raises(EntityNotFoundError):
         task = memory_task_repository.get('MISSING')
+
+
+def test_memory_task_repository_add(
+        memory_task_repository: MemoryTaskRepository) -> None:
+    task = Task("Improve the repository")
+    memory_task_repository.add(task)
+    assert len(memory_task_repository.tasks) == 4
+    assert memory_task_repository.tasks['T-4'] == task
+    assert memory_task_repository.sequence == 5
+
+
+def test_memory_task_repository_add_with_uid(
+        memory_task_repository: MemoryTaskRepository) -> None:
+    task = Task("Improve the repository")
+    task.uid = "ABC123"
+    memory_task_repository.add(task)
+    assert len(memory_task_repository.tasks) == 4
+    assert memory_task_repository.tasks['ABC123'] == task
+    assert memory_task_repository.sequence == 5
