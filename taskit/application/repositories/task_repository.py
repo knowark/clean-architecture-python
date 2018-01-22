@@ -13,6 +13,14 @@ class TaskRepository(ABC):
     def get(self, uid: str) -> Task:
         "Get method to be implemented."
 
+    @abstractmethod
+    def update(self, task: Task) -> None:
+        "Update method to be implemented."
+
+    @abstractmethod
+    def delete(self, task: Task) -> None:
+        "Delete method to be implemented."
+
 
 class MemoryTaskRepository(TaskRepository):
     def __init__(self) -> None:
@@ -30,6 +38,12 @@ class MemoryTaskRepository(TaskRepository):
         if not task:
             raise EntityNotFoundError("Task not found.")
         return task
+
+    def update(self, task: Task) -> None:
+        "Update method to be implemented."
+
+    def delete(self, task: Task) -> None:
+        "Delete method to be implemented."
 
     def load(self, tasks_dict: Dict[str, Task]) -> None:
         self.tasks = tasks_dict
