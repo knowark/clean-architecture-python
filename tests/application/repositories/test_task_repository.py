@@ -69,3 +69,22 @@ def test_memory_task_repository_add_with_uid(
     assert len(memory_task_repository.tasks) == 4
     assert memory_task_repository.tasks['ABC123'] == task
     assert memory_task_repository.sequence == 5
+
+
+def test_memory_task_repository_update(
+        memory_task_repository: MemoryTaskRepository) -> None:
+    task = Task("Buy the milk and the eggs")
+    task.uid = 'T-1'
+    assert memory_task_repository.tasks['T-1'].name == "Buy the milk"
+    memory_task_repository.update(task)
+    assert len(memory_task_repository.tasks) == 3
+    assert memory_task_repository.tasks['T-1'].name == "Buy the milk and the eggs"
+
+
+def test_memory_task_repository_update_not_found(
+        memory_task_repository: MemoryTaskRepository) -> None:
+    task = Task("Fix my bike")
+    task.uid = 'T-MISSING'
+    with raises(EntityNotFoundError):
+        memory_task_repository.update(task)
+    assert len(memory_task_repository.tasks) == 3

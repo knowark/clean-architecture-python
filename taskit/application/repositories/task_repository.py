@@ -41,6 +41,11 @@ class MemoryTaskRepository(TaskRepository):
 
     def update(self, task: Task) -> None:
         "Update method to be implemented."
+        uid = task.uid
+        old_task = self.tasks.get(uid)
+        if not old_task:
+            raise EntityNotFoundError("Task not found.")
+        self.tasks[uid] = task
 
     def delete(self, task: Task) -> None:
         "Delete method to be implemented."
