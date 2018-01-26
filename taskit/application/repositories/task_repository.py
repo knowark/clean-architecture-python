@@ -33,14 +33,12 @@ class MemoryTaskRepository(TaskRepository):
         self.sequence += 1
 
     def get(self, uid: str) -> Task:
-        "Get method to be implemented."
         task = self.tasks.get(uid)
         if not task:
             raise EntityNotFoundError("Task not found.")
         return task
 
     def update(self, task: Task) -> None:
-        "Update method to be implemented."
         uid = task.uid
         old_task = self.tasks.get(uid)
         if not old_task:
@@ -48,7 +46,6 @@ class MemoryTaskRepository(TaskRepository):
         self.tasks[uid] = task
 
     def delete(self, task: Task) -> None:
-        "Delete method to be implemented."
         uid = task.uid
         old_task = self.tasks.get(uid)
         if not old_task:
