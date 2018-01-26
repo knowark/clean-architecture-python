@@ -49,6 +49,11 @@ class MemoryTaskRepository(TaskRepository):
 
     def delete(self, task: Task) -> None:
         "Delete method to be implemented."
+        uid = task.uid
+        old_task = self.tasks.get(uid)
+        if not old_task:
+            raise EntityNotFoundError("Task not found.")
+        del self.tasks[uid]
 
     def load(self, tasks_dict: Dict[str, Task]) -> None:
         self.tasks = tasks_dict

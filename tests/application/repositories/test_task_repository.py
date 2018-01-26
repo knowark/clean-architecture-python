@@ -88,3 +88,21 @@ def test_memory_task_repository_update_not_found(
     with raises(EntityNotFoundError):
         memory_task_repository.update(task)
     assert len(memory_task_repository.tasks) == 3
+
+
+def test_memory_task_repository_delete(
+        memory_task_repository: MemoryTaskRepository) -> None:
+    task = memory_task_repository.tasks['T-1']
+    task.uid = 'T-1'
+    memory_task_repository.delete(task)
+    assert len(memory_task_repository.tasks) == 2
+    assert memory_task_repository.tasks.get('T-1') is None
+
+
+def test_memory_task_repository_delete_not_found(
+        memory_task_repository: MemoryTaskRepository) -> None:
+    task = Task("Fix my bike")
+    task.uid = 'T-MISSING'
+    with raises(EntityNotFoundError):
+        memory_task_repository.delete(task)
+    assert len(memory_task_repository.tasks) == 3
