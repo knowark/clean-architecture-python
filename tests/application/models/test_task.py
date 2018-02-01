@@ -20,3 +20,25 @@ def test_task_default_attributes(task: Task) -> None:
     assert task.project_id == ""
     assert task.stage_id == ""
     assert task.comments == ""
+
+
+def test_task_initilization_from_dict():
+    now = datetime.now()
+    task_dict = {
+        'name': "Go to the gym",
+        'uid': "T-007",
+        'due_date': now,
+        'priority': 3,
+        'project_id': "P-001",
+        'stage_id': "S-003",
+        'comments': "Don't hesitate. Do it!"
+    }
+    task = Task(**task_dict)
+    assert task.name == "Go to the gym"
+    assert task.uid == "T-007"
+    assert task.due_date == now
+    assert task.priority == 3
+    assert task.project_id == "P-001"
+    assert task.stage_id == "S-003"
+    assert task.comments == "Don't hesitate. Do it!" 
+        

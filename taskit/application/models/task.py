@@ -2,7 +2,7 @@ from datetime import datetime
 
 
 class Task:
-    def __init__(self, name: str) -> None:
+    def __init__(self, name: str, **kwargs) -> None:
         self.name = name
         self.uid = ""
         self.due_date = datetime.now()
@@ -10,3 +10,4 @@ class Task:
         self.project_id = ""
         self.stage_id = ""
         self.comments = ""
+        self.__dict__.update(kwargs)
