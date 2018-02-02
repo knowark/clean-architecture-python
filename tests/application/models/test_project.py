@@ -14,5 +14,4 @@ def test_project_creation(project: Project) -> None:
 
 def test_project_default_attributes(project: Project) -> None:
     assert project.uid == ""
-    assert project.stage_ids == []
     assert project.comments == ""
