@@ -18,5 +18,5 @@ def test_task_default_attributes(task: Task) -> None:
     assert isinstance(task.due_date, datetime)
     assert task.priority == 1
     assert task.project_id == ""
-    assert task.stage_id == ""
+    assert task.stage == ""
     assert task.comments == ""

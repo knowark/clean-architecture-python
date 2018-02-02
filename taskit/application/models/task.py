@@ -8,5 +8,5 @@ class Task:
         self.due_date = datetime.now()
         self.priority = 1
         self.project_id = ""
-        self.stage_id = ""
+        self.stage = ""
         self.comments = ""
