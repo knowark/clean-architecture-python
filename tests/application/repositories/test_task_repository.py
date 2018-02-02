@@ -78,7 +78,8 @@ def test_memory_task_repository_update(
     assert memory_task_repository.tasks['T-1'].name == "Buy the milk"
     memory_task_repository.update(task)
     assert len(memory_task_repository.tasks) == 3
-    assert memory_task_repository.tasks['T-1'].name == "Buy the milk and the eggs"
+    assert memory_task_repository.tasks['T-1'].name == (
+        "Buy the milk and the eggs")
 
 
 def test_memory_task_repository_update_not_found(
