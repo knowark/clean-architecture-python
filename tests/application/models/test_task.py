@@ -40,5 +40,4 @@ def test_task_initilization_from_dict():
     assert task.priority == 3
     assert task.project_id == "P-001"
     assert task.stage_id == "S-003"
-    assert task.comments == "Don't hesitate. Do it!" 
-        
+    assert task.comments == "Don't hesitate. Do it!"
