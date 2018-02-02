@@ -7,7 +7,7 @@ from taskit.application.repositories.task_repository import (
 
 
 def test_task_repository_methods() -> None:
-    abstract_methods = TaskRepository.__abstractmethods__
+    abstract_methods = TaskRepository.__abstractmethods__  # type: ignore
     assert 'add' in abstract_methods
     assert 'get' in abstract_methods
     assert 'update' in abstract_methods
@@ -78,7 +78,8 @@ def test_memory_task_repository_update(
     assert memory_task_repository.tasks['T-1'].name == "Buy the milk"
     memory_task_repository.update(task)
     assert len(memory_task_repository.tasks) == 3
-    assert memory_task_repository.tasks['T-1'].name == "Buy the milk and the eggs"
+    assert memory_task_repository.tasks['T-1'].name == (
+        "Buy the milk and the eggs")
 
 
 def test_memory_task_repository_update_not_found(

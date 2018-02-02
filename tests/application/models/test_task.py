@@ -18,7 +18,7 @@ def test_task_default_attributes(task: Task) -> None:
     assert isinstance(task.due_date, datetime)
     assert task.priority == 1
     assert task.project_id == ""
-    assert task.stage_id == ""
+    assert task.stage == ""
     assert task.comments == ""
 
 
@@ -30,7 +30,7 @@ def test_task_initilization_from_dict():
         'due_date': now,
         'priority': 3,
         'project_id': "P-001",
-        'stage_id': "S-003",
+        'stage': "Draft",
         'comments': "Don't hesitate. Do it!"
     }
     task = Task(**task_dict)
@@ -39,5 +39,5 @@ def test_task_initilization_from_dict():
     assert task.due_date == now
     assert task.priority == 3
     assert task.project_id == "P-001"
-    assert task.stage_id == "S-003"
+    assert task.stage == "Draft"
     assert task.comments == "Don't hesitate. Do it!"

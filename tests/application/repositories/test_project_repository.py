@@ -7,7 +7,7 @@ from taskit.application.repositories.project_repository import (
 
 
 def test_project_repository_methods() -> None:
-    abstract_methods = ProjectRepository.__abstractmethods__
+    abstract_methods = ProjectRepository.__abstractmethods__  # type: ignore
     assert 'add' in abstract_methods
     assert 'get' in abstract_methods
     assert 'update' in abstract_methods
