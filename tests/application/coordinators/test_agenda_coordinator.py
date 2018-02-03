@@ -1,12 +1,13 @@
 
 from datetime import datetime
-from pytest import fixture
+from pytest import fixture, raises
 from taskit.application.models.project import Project
 from taskit.application.models.task import Task
 from taskit.application.repositories.project_repository import (
     ProjectRepository, MemoryProjectRepository)
 from taskit.application.repositories.task_repository import (
     TaskRepository, MemoryTaskRepository)
+from taskit.application.repositories.errors import EntityNotFoundError
 from taskit.application.coordinators.agenda_coordinator import (
     AgendaCoordinator)
 
@@ -67,3 +68,13 @@ def test_aqenda_coordinator_create_task(
     assert task.project_id == task_dict['project_id']
     assert task.stage == 'new'
 
+
+def test_agenda_coordinator_create_task_missing_project(
+        agenda_coordinator: AgendaCoordinator) -> None:
+    task_dict = {
+        'name': "Buy bread and eggs",
+        'project_id': "MISSING"
+    }
+
+    with raises(EntityNotFoundError):
+        agenda_coordinator.create_task(task_dict)
