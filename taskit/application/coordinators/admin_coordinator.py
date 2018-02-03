@@ -13,3 +13,7 @@ class AdminCoordinator:
     def create_project(self, project_dict: Dict[str, any]):
         project = Project(**project_dict)
         self.project_repository.add(project)
+
+    def update_project(self, project_dict: Dict[str, any]):
+        project = Project(**project_dict)
+        self.project_repository.update(project)

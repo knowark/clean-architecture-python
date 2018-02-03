@@ -22,6 +22,7 @@ def admin_coordinator(
 def test_admin_coordinator_creation(
         admin_coordinator: AdminCoordinator) -> None:
     assert hasattr(admin_coordinator, 'create_project')
+    assert hasattr(admin_coordinator, 'update_project')
 
 
 def test_admin_coordinator_create_project(
@@ -39,12 +40,21 @@ def test_admin_coordinator_create_project(
     assert project.comments == project_dict['comments']
 
 
-# def test_agenda_coordinator_create_task_missing_project(
-#         agenda_coordinator: AgendaCoordinator) -> None:
-#     task_dict = {
-#         'name': "Buy bread and eggs",
-#         'project_id': "MISSING"
-#     }
+def test_admin_coordinator_update_project(
+        admin_coordinator: AdminCoordinator) -> None:
+    project_dict = {
+        'name': "Academy",
+        'uid': 'P-1',
+        'comments': "Academy related activities."
+    }
+    # project_id = project_dict['uid']
 
-#     with raises(EntityNotFoundError):
-#         agenda_coordinator.create_task(task_dict)
+    project = admin_coordinator.project_repository.get('P-1')
+    assert project.name == "Personal"
+    assert project.comments == ""
+
+    admin_coordinator.update_project(project_dict)
+    project = admin_coordinator.project_repository.get('P-1')
+
+    assert project.name == "Academy"
+    assert project.comments == "Academy related activities."
