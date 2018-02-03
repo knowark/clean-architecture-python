@@ -17,3 +17,7 @@ class AdminCoordinator:
     def update_project(self, project_dict: Dict[str, any]):
         project = Project(**project_dict)
         self.project_repository.update(project)
+    
+    def delete_project(self, project_dict: Dict[str, any]):
+        project = Project(**project_dict)
+        self.project_repository.delete(project)

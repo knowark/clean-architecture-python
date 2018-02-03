@@ -48,6 +48,8 @@ def agenda_coordinator(
 def test_agenda_coordinator_creation(
         agenda_coordinator: AgendaCoordinator) -> None:
     assert hasattr(agenda_coordinator, 'create_task')
+    assert hasattr(agenda_coordinator, 'start_task')
+    assert hasattr(agenda_coordinator, 'complete_task')
 
 
 def test_aqenda_coordinator_create_task(
@@ -66,7 +68,7 @@ def test_aqenda_coordinator_create_task(
     task = task_repository.get('T-4')
     assert task.name == task_dict['name']
     assert task.project_id == task_dict['project_id']
-    assert task.stage == 'new'
+    assert task.stage == 'New'
 
 
 def test_agenda_coordinator_create_task_missing_project(
@@ -75,6 +77,27 @@ def test_agenda_coordinator_create_task_missing_project(
         'name': "Buy bread and eggs",
         'project_id': "MISSING"
     }
-
     with raises(EntityNotFoundError):
         agenda_coordinator.create_task(task_dict)
+
+
+def test_agenda_coordinator_start_task(
+        agenda_coordinator: AgendaCoordinator) -> None:
+    task_dict = {
+        'name': 'Buy the milk',
+        'uid': 'T-1'
+    }
+    agenda_coordinator.start_task(task_dict)
+    task = agenda_coordinator.task_repository.get('T-1')
+    assert task.stage == 'Progress'
+
+
+def test_agenda_coordinator_complete_task(
+        agenda_coordinator: AgendaCoordinator) -> None:
+    task_dict = {
+        'name': 'Buy the milk',
+        'uid': 'T-1'
+    }
+    agenda_coordinator.complete_task(task_dict)
+    task = agenda_coordinator.task_repository.get('T-1')
+    assert task.stage == 'Done'
