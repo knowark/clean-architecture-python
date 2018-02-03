@@ -11,8 +11,5 @@ class AdminCoordinator:
         self.project_repository = project_repository
 
     def create_project(self, project_dict: Dict[str, any]):
-        # Intantiate a Task object
         project = Project(**project_dict)
-
-        # Add the new task to the task repository
         self.project_repository.add(project)
