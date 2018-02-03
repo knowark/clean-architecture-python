@@ -24,6 +24,8 @@ def test_admin_coordinator_creation(
     assert hasattr(admin_coordinator, 'create_project')
     assert hasattr(admin_coordinator, 'update_project')
     assert hasattr(admin_coordinator, 'delete_project')
+    assert hasattr(admin_coordinator, 'update_task')
+    assert hasattr(admin_coordinator, 'delete_task')
 
 
 def test_admin_coordinator_create_project(
@@ -71,3 +73,35 @@ def test_admin_coordinator_delete_project(
     projects = admin_coordinator.project_repository.projects
     assert len(projects) == 2
     assert 'P-3' not in projects
+
+
+def test_admin_coordinator_update_task(
+        admin_coordinator: AdminCoordinator) -> None:
+    task_dict = {
+        'name': "Buy the milk",
+        'uid': 'T-1',
+        'comments': "An updated comment."
+    }
+
+    task = admin_coordinator.task_repository.get('T-1')
+    assert task.name == "Buy the milk"
+    assert task.comments == ""
+
+    admin_coordinator.update_task(task_dict)
+    task = admin_coordinator.task_repository.get('T-1')
+
+    assert task.name == "Buy the milk"
+    assert task.comments == "An updated comment."
+
+
+# def test_admin_coordinator_delete_task(
+#         admin_coordinator: AdminCoordinator) -> None:
+#     project_dict = {
+#         'name': "Errands",
+#         'uid': 'P-3'
+#     }
+
+#     admin_coordinator.delete_project(project_dict)
+#     projects = admin_coordinator.project_repository.projects
+#     assert len(projects) == 2
+#     assert 'P-3' not in projects

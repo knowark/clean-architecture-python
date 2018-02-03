@@ -1,5 +1,6 @@
 from typing import Dict
 from taskit.application.models.project import Project
+from taskit.application.models.task import Task
 from taskit.application.repositories.project_repository import ProjectRepository
 from taskit.application.repositories.task_repository import TaskRepository
 
@@ -17,7 +18,15 @@ class AdminCoordinator:
     def update_project(self, project_dict: Dict[str, any]):
         project = Project(**project_dict)
         self.project_repository.update(project)
-    
+
     def delete_project(self, project_dict: Dict[str, any]):
         project = Project(**project_dict)
         self.project_repository.delete(project)
+
+    def update_task(self, task_dict: Dict[str, any]):
+        task = Task(**task_dict)
+        self.task_repository.update(task)
+
+    def delete_task(self, task_dict: Dict[str, any]):
+        task = Task(**task_dict)
+        self.task_repository.delete(task)
