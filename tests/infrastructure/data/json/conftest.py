@@ -3,13 +3,7 @@ from datetime import date, datetime
 from pytest import fixture
 from taskit.application.models.project import Project
 from taskit.application.models.task import Task
-
-
-def json_serialize(obj):
-    """JSON serializer for objects not serializable by default"""
-    if isinstance(obj, (datetime, date)):
-        return obj.isoformat()
-    raise TypeError("Type {} not serializable".format(type(obj)))
+from taskit.infrastructure.data.json import json_serialize
 
 
 @fixture(scope='session')
@@ -25,6 +19,10 @@ def json_file(tmpdir_factory):
             'T-1': vars(Task("Buy the milk", uid="T-1")),
             'T-2': vars(Task("Make conference presentation", uid="T-2")),
             'T-3': vars(Task("Clean the kitchen", uid="T-3"))
+        },
+        "_sequences": {
+            "projects": 4,
+            "tasks": 4
         }
     }
     with open(str(file_name), 'w+') as f:

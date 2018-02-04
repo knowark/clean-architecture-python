@@ -1,6 +1,7 @@
 import json
-from pytest import fixture
+from pytest import fixture, raises
 from taskit.application.models.project import Project
+from taskit.application.repositories.errors import EntityNotFoundError
 from taskit.application.repositories.project_repository import ProjectRepository
 from taskit.infrastructure.data.json.project_repository import (
     JsonProjectRepository)
@@ -24,19 +25,24 @@ def test_json_project_repository_get(
     assert project.name == "Errands"
 
 
-# def test_json_project_repository_get_not_found(
-#         json_project_repository: JsonProjectRepository) -> None:
-#     with raises(EntityNotFoundError):
-#         project = json_project_repository.get('MISSING')
+def test_json_project_repository_get_not_found(
+        json_project_repository: JsonProjectRepository) -> None:
+    with raises(EntityNotFoundError):
+        project = json_project_repository.get('MISSING')
 
 
-# def test_json_project_repository_add(
-#         json_project_repository: JsonProjectRepository) -> None:
-#     project = Project("Shopping")
-#     json_project_repository.add(project)
-#     assert len(json_project_repository.projects) == 4
-#     assert json_project_repository.projects['P-4'] == project
-#     assert json_project_repository.sequence == 5
+def test_json_project_repository_add(
+        json_project_repository: JsonProjectRepository) -> None:
+    project = Project("Shopping")
+    json_project_repository.add(project)
+
+    with open(json_project_repository.filename, 'r') as f:
+        data = json.load(f)
+
+
+    assert len(data['projects']) == 4
+    # assert json_project_repository.projects['P-4'] == project
+    # assert json_project_repository.sequence == 5
 
 
 # def test_json_project_repository_add_with_uid(
