@@ -94,14 +94,14 @@ def test_admin_coordinator_update_task(
     assert task.comments == "An updated comment."
 
 
-# def test_admin_coordinator_delete_task(
-#         admin_coordinator: AdminCoordinator) -> None:
-#     project_dict = {
-#         'name': "Errands",
-#         'uid': 'P-3'
-#     }
+def test_admin_coordinator_delete_task(
+        admin_coordinator: AdminCoordinator) -> None:
+    project_dict = {
+        'name': "Errands",
+        'uid': 'T-3'
+    }
 
-#     admin_coordinator.delete_project(project_dict)
-#     projects = admin_coordinator.project_repository.projects
-#     assert len(projects) == 2
-#     assert 'P-3' not in projects
+    admin_coordinator.delete_task(project_dict)
+    tasks = admin_coordinator.task_repository.tasks
+    assert len(tasks) == 2
+    assert 'T-3' not in tasks
