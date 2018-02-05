@@ -77,7 +77,7 @@ def test_json_project_repository_update(
 
 def test_json_project_repository_update_not_found(
         json_project_repository: JsonProjectRepository) -> None:
-    project = Project("Fix my bike")
+    project = Project("Hobbies")
     project.uid = 'T-MISSING'
     with raises(EntityNotFoundError):
         json_project_repository.update(project)
@@ -102,7 +102,7 @@ def test_json_project_repository_delete(
 
 def test_json_project_repository_delete_not_found(
         json_project_repository: JsonProjectRepository) -> None:
-    project = Project("Fix my bike")
+    project = Project("Hobbies")
     project.uid = 'T-MISSING'
     with raises(EntityNotFoundError):
         json_project_repository.delete(project)
