@@ -28,7 +28,7 @@ def test_json_project_repository_get(
 def test_json_project_repository_get_not_found(
         json_project_repository: JsonProjectRepository) -> None:
     with raises(EntityNotFoundError):
-        project = json_project_repository.get('MISSING')
+        json_project_repository.get('MISSING')
 
 
 def test_json_project_repository_add(
