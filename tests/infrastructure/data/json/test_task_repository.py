@@ -35,10 +35,8 @@ def test_json_task_repository_add(
         json_task_repository: JsonTaskRepository) -> None:
     task = Task("Organize my documents")
     json_task_repository.add(task)
-
     with open(json_task_repository.filename, 'r') as f:
         data = json.load(f)
-
     assert len(data['tasks']) == 4
     assert data['tasks']['T-4']['uid'] == task.uid
     assert data['tasks']['T-4']['name'] == task.name
@@ -52,7 +50,6 @@ def test_json_task_repository_add_with_uid(
     json_task_repository.add(task)
     with open(json_task_repository.filename, 'r') as f:
         data = json.load(f)
-
     assert len(data['tasks']) == 4
     assert data['tasks']['ABC123']['uid'] == task.uid
     assert data['tasks']['ABC123']['name'] == task.name
@@ -66,9 +63,7 @@ def test_json_task_repository_update(
     with open(json_task_repository.filename, 'r') as f:
         data = json.load(f)
     assert data['tasks']['T-1']['name'] == "Buy the milk"
-
     json_task_repository.update(task)
-
     with open(json_task_repository.filename, 'r') as f:
         data = json.load(f)
     assert len(data['tasks']) == 3
@@ -95,7 +90,6 @@ def test_json_task_repository_delete(
     json_task_repository.delete(task)
     with open(json_task_repository.filename, 'r') as f:
         data = json.load(f)
-
     assert len(data['tasks']) == 2
     assert 'T-1' not in data['tasks']
 

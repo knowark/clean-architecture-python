@@ -35,10 +35,8 @@ def test_json_project_repository_add(
         json_project_repository: JsonProjectRepository) -> None:
     project = Project("Shopping")
     json_project_repository.add(project)
-
     with open(json_project_repository.filename, 'r') as f:
         data = json.load(f)
-
     assert len(data['projects']) == 4
     assert data['projects']['P-4']['uid'] == project.uid
     assert data['projects']['P-4']['name'] == project.name
@@ -52,7 +50,6 @@ def test_json_project_repository_add_with_uid(
     json_project_repository.add(project)
     with open(json_project_repository.filename, 'r') as f:
         data = json.load(f)
-
     assert len(data['projects']) == 4
     assert data['projects']['ABC123']['uid'] == project.uid
     assert data['projects']['ABC123']['name'] == project.name
@@ -66,9 +63,7 @@ def test_json_project_repository_update(
     with open(json_project_repository.filename, 'r') as f:
         data = json.load(f)
     assert data['projects']['P-1']['name'] == "Personal"
-
     json_project_repository.update(project)
-
     with open(json_project_repository.filename, 'r') as f:
         data = json.load(f)
     assert len(data['projects']) == 3
@@ -95,7 +90,6 @@ def test_json_project_repository_delete(
     json_project_repository.delete(project)
     with open(json_project_repository.filename, 'r') as f:
         data = json.load(f)
-
     assert len(data['projects']) == 2
     assert 'P-1' not in data['projects']
 
