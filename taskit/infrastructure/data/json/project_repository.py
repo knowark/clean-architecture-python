@@ -30,7 +30,25 @@ class JsonProjectRepository(ProjectRepository):
         return Project(**project_dict)
 
     def update(self, project: Project) -> None:
-        "Update method to be implemented."
+        uid = project.uid
+        with open(self.filename) as f:
+            data = json.load(f)
+            projects = data.get('projects', {})
+        old_project = projects.get(uid)
+        if not old_project:
+            raise EntityNotFoundError("Project not found.")
+        data['projects'][project.uid] = vars(project)
+        with open(self.filename, 'w') as f:
+            json.dump(data, f, default=json_serialize)
 
     def delete(self, project: Project) -> None:
-        "Delete method to be implemented."
+        uid = project.uid
+        with open(self.filename) as f:
+            data = json.load(f)
+            projects = data.get('projects', {})
+        old_project = projects.get(uid)
+        if not old_project:
+            raise EntityNotFoundError("Project not found.")
+        del data['projects'][project.uid]
+        with open(self.filename, 'w') as f:
+            json.dump(data, f, default=json_serialize)

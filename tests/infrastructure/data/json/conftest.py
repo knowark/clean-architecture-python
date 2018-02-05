@@ -6,7 +6,7 @@ from taskit.application.models.task import Task
 from taskit.infrastructure.data.json import json_serialize
 
 
-@fixture(scope='session')
+@fixture
 def json_file(tmpdir_factory):
     file_name = tmpdir_factory.mktemp('data').join('taskit.json')
     test_dictionary = {

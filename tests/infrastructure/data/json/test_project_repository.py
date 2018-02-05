@@ -39,55 +39,73 @@ def test_json_project_repository_add(
     with open(json_project_repository.filename, 'r') as f:
         data = json.load(f)
 
+    assert len(data['projects']) == 4
+    assert data['projects']['P-4']['uid'] == project.uid
+    assert data['projects']['P-4']['name'] == project.name
+    assert data['_sequences']['projects'] == 5
+
+
+def test_json_project_repository_add_with_uid(
+        json_project_repository: JsonProjectRepository) -> None:
+    project = Project("General")
+    project.uid = "ABC123"
+    json_project_repository.add(project)
+    with open(json_project_repository.filename, 'r') as f:
+        data = json.load(f)
 
     assert len(data['projects']) == 4
-    # assert json_project_repository.projects['P-4'] == project
-    # assert json_project_repository.sequence == 5
+    assert data['projects']['ABC123']['uid'] == project.uid
+    assert data['projects']['ABC123']['name'] == project.name
+    assert data['_sequences']['projects'] == 5
 
 
-# def test_json_project_repository_add_with_uid(
-#         json_project_repository: JsonProjectRepository) -> None:
-#     project = Project("General")
-#     project.uid = "ABC123"
-#     json_project_repository.add(project)
-#     assert len(json_project_repository.projects) == 4
-#     assert json_project_repository.projects['ABC123'] == project
-#     assert json_project_repository.sequence == 5
+def test_json_project_repository_update(
+        json_project_repository: JsonProjectRepository) -> None:
+    project = Project("Personal & Family")
+    project.uid = 'P-1'
+    with open(json_project_repository.filename, 'r') as f:
+        data = json.load(f)
+    assert data['projects']['P-1']['name'] == "Personal"
+
+    json_project_repository.update(project)
+
+    with open(json_project_repository.filename, 'r') as f:
+        data = json.load(f)
+    assert len(data['projects']) == 3
+    assert data['projects']['P-1']['name'] == "Personal & Family"
 
 
-# def test_json_project_repository_update(
-#         json_project_repository: JsonProjectRepository) -> None:
-#     project = Project("Personal & Family")
-#     project.uid = 'P-1'
-#     assert json_project_repository.projects['P-1'].name == "Personal"
-#     json_project_repository.update(project)
-#     assert len(json_project_repository.projects) == 3
-#     assert json_project_repository.projects['P-1'].name == (
-#         "Personal & Family")
+def test_json_project_repository_update_not_found(
+        json_project_repository: JsonProjectRepository) -> None:
+    project = Project("Fix my bike")
+    project.uid = 'T-MISSING'
+    with raises(EntityNotFoundError):
+        json_project_repository.update(project)
+    with open(json_project_repository.filename, 'r') as f:
+        data = json.load(f)
+    assert len(data['projects']) == 3
 
 
-# def test_json_project_repository_update_not_found(
-#         json_project_repository: JsonProjectRepository) -> None:
-#     project = Project("Fix my bike")
-#     project.uid = 'T-MISSING'
-#     with raises(EntityNotFoundError):
-#         json_project_repository.update(project)
-#     assert len(json_project_repository.projects) == 3
+def test_json_project_repository_delete(
+        json_project_repository: JsonProjectRepository) -> None:
+    with open(json_project_repository.filename, 'r') as f:
+        data = json.load(f)
+    project_dict = data['projects']['P-1']
+    project = Project(**project_dict)
+    json_project_repository.delete(project)
+    with open(json_project_repository.filename, 'r') as f:
+        data = json.load(f)
+
+    assert len(data['projects']) == 2
+    assert 'P-1' not in data['projects']
 
 
-# def test_json_project_repository_delete(
-#         json_project_repository: JsonProjectRepository) -> None:
-#     project = json_project_repository.projects['P-1']
-#     project.uid = 'P-1'
-#     json_project_repository.delete(project)
-#     assert len(json_project_repository.projects) == 2
-#     assert json_project_repository.projects.get('P-1') is None
-
-
-# def test_json_project_repository_delete_not_found(
-#         json_project_repository: JsonProjectRepository) -> None:
-#     project = Project("Fix my bike")
-#     project.uid = 'T-MISSING'
-#     with raises(EntityNotFoundError):
-#         json_project_repository.delete(project)
-#     assert len(json_project_repository.projects) == 3
+def test_json_project_repository_delete_not_found(
+        json_project_repository: JsonProjectRepository) -> None:
+    project = Project("Fix my bike")
+    project.uid = 'T-MISSING'
+    with raises(EntityNotFoundError):
+        json_project_repository.delete(project)
+    with open(json_project_repository.filename, 'r') as f:
+        data = json.load(f)
+    assert len(data['projects']) == 3
