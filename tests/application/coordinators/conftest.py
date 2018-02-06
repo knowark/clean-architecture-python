@@ -11,9 +11,9 @@ from taskit.application.repositories.task_repository import (
 def project_repository() -> MemoryProjectRepository:
     project_repository = MemoryProjectRepository()
     projects_dict = {
-        'P-1': Project("Personal"),
-        'P-2': Project("Work"),
-        'P-3': Project("Errands")
+        'P-1': Project("Personal", uid="P-1"),
+        'P-2': Project("Work", uid="P-2"),
+        'P-3': Project("Errands", uid="P-3")
     }
     project_repository.sequence = 4
     project_repository.load(projects_dict)
@@ -24,9 +24,9 @@ def project_repository() -> MemoryProjectRepository:
 def task_repository() -> MemoryTaskRepository:
     task_repository = MemoryTaskRepository()
     tasks_dict = {
-        'T-1': Task("Buy the milk"),
-        'T-2': Task("Make conference presentation"),
-        'T-3': Task("Clean the kitchen")
+        'T-1': Task("Buy the milk", uid="T-1"),
+        'T-2': Task("Make conference presentation", uid="T-2"),
+        'T-3': Task("Clean the kitchen", uid="T-3")
     }
     task_repository.sequence = 4
     task_repository.load(tasks_dict)

@@ -13,32 +13,6 @@ from taskit.application.coordinators.agenda_coordinator import (
 
 
 @fixture
-def project_repository() -> MemoryProjectRepository:
-    project_repository = MemoryProjectRepository()
-    projects_dict = {
-        'P-1': Project("Personal"),
-        'P-2': Project("Work"),
-        'P-3': Project("Errands")
-    }
-    project_repository.sequence = 4
-    project_repository.load(projects_dict)
-    return project_repository
-
-
-@fixture
-def task_repository() -> MemoryTaskRepository:
-    task_repository = MemoryTaskRepository()
-    tasks_dict = {
-        'T-1': Task("Buy the milk"),
-        'T-2': Task("Make conference presentation"),
-        'T-3': Task("Clean the kitchen")
-    }
-    task_repository.sequence = 4
-    task_repository.load(tasks_dict)
-    return task_repository
-
-
-@fixture
 def agenda_coordinator(
         project_repository: ProjectRepository,
         task_repository: TaskRepository) -> AgendaCoordinator:
@@ -83,21 +57,15 @@ def test_agenda_coordinator_create_task_missing_project(
 
 def test_agenda_coordinator_start_task(
         agenda_coordinator: AgendaCoordinator) -> None:
-    task_dict = {
-        'name': 'Buy the milk',
-        'uid': 'T-1'
-    }
-    agenda_coordinator.start_task(task_dict)
+    uid = 'T-1'
+    agenda_coordinator.start_task(uid)
     task = agenda_coordinator.task_repository.get('T-1')
     assert task.stage == 'Progress'
 
 
 def test_agenda_coordinator_complete_task(
         agenda_coordinator: AgendaCoordinator) -> None:
-    task_dict = {
-        'name': 'Buy the milk',
-        'uid': 'T-1'
-    }
-    agenda_coordinator.complete_task(task_dict)
+    uid = 'T-1'
+    agenda_coordinator.complete_task(uid)
     task = agenda_coordinator.task_repository.get('T-1')
     assert task.stage == 'Done'
