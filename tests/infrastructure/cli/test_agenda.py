@@ -12,3 +12,19 @@ def test_cli_agenda_new(mock_state: Mock):
     }
     mock_state.agenda_coordinator.create_task.assert_called_with(task_dict)
     assert result.exit_code == 0
+
+
+def test_cli_agenda_start(mock_state: Mock):
+    runner = CliRunner()
+    result = runner.invoke(
+        cli, ['agenda', 'start'], obj=mock_state, input="T-1\n")
+    mock_state.agenda_coordinator.start_task.assert_called_with("T-1")
+    assert result.exit_code == 0
+
+
+def test_cli_agenda_complete(mock_state: Mock):
+    runner = CliRunner()
+    result = runner.invoke(
+        cli, ['agenda', 'complete'], obj=mock_state, input="T-1\n")
+    mock_state.agenda_coordinator.complete_task.assert_called_with("T-1")
+    assert result.exit_code == 0

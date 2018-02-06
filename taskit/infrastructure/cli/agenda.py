@@ -15,3 +15,17 @@ def new(obj):
         'name': name
     }
     obj.agenda_coordinator.create_task(task_dict)
+
+
+@agenda.command()
+@click.pass_obj
+def start(obj):
+    uid = click.prompt("Please enter the task uid", type=str)
+    obj.agenda_coordinator.start_task(uid)
+
+
+@agenda.command()
+@click.pass_obj
+def complete(obj):
+    uid = click.prompt("Please enter the task uid", type=str)
+    obj.agenda_coordinator.complete_task(uid)
