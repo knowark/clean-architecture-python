@@ -46,9 +46,8 @@ def test_admin_coordinator_create_project(
 def test_admin_coordinator_update_project(
         admin_coordinator: AdminCoordinator) -> None:
     project_dict = {
-        'name': "Academy",
         'uid': 'P-1',
-        'comments': "Academy related activities."
+        'comments': "Free time related activities."
     }
 
     project = admin_coordinator.project_repository.get('P-1')
@@ -58,8 +57,8 @@ def test_admin_coordinator_update_project(
     admin_coordinator.update_project(project_dict)
     project = admin_coordinator.project_repository.get('P-1')
 
-    assert project.name == "Academy"
-    assert project.comments == "Academy related activities."
+    assert project.name == "Personal"
+    assert project.comments == "Free time related activities."
 
 
 def test_admin_coordinator_delete_project(
@@ -78,7 +77,6 @@ def test_admin_coordinator_delete_project(
 def test_admin_coordinator_update_task(
         admin_coordinator: AdminCoordinator) -> None:
     task_dict = {
-        'name': "Buy the milk",
         'uid': 'T-1',
         'comments': "An updated comment."
     }
