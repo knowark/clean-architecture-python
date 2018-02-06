@@ -10,8 +10,8 @@ def agenda(obj):
 @agenda.command()
 @click.pass_obj
 def new(obj):
-    print("TWO --->>", obj.config)
-    click.echo('Running NEW Task')
-    task_dict = {}
+    name = click.prompt("Please enter the task name", type=str)
+    task_dict = {
+        'name': name
+    }
     obj.agenda_coordinator.create_task(task_dict)
-    click.echo('Exiting NEW Task')
