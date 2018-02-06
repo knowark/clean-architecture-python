@@ -19,27 +19,27 @@ class AgendaCoordinator:
         task = Task(**task_dict)
 
         # Set the task stage to 'New'
-        task.stage = 'New' 
+        task.stage = 'New'
 
         # Add the new task to the task repository
         self.task_repository.add(task)
 
-    def start_task(self, task_dict: Dict[str, any]):
-        # Intantiate a Task object
-        task = Task(**task_dict)
+    def start_task(self, uid: str):
+        # Get the Task object
+        task = self.task_repository.get(uid)
 
         # Set the task stage to 'Progress'
-        task.stage = 'Progress' 
+        task.stage = 'Progress'
 
         # Update the task in the task repository
         self.task_repository.update(task)
-    
-    def complete_task(self, task_dict: Dict[str, any]):
-        # Intantiate a Task object
-        task = Task(**task_dict)
+
+    def complete_task(self, uid: str):
+        # Get the Task object
+        task = self.task_repository.get(uid)
 
         # Set the task stage to 'Progress'
-        task.stage = 'Done' 
+        task.stage = 'Done'
 
         # Update the task in the task repository
         self.task_repository.update(task)
