@@ -49,7 +49,7 @@ def test_memory_task_repository_get(
 def test_memory_task_repository_get_not_found(
         memory_task_repository: MemoryTaskRepository) -> None:
     with raises(EntityNotFoundError):
-        task = memory_task_repository.get('MISSING')
+        memory_task_repository.get('MISSING')
 
 
 def test_memory_task_repository_add(

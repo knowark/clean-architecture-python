@@ -49,7 +49,7 @@ def test_memory_project_repository_get(
 def test_memory_project_repository_get_not_found(
         memory_project_repository: MemoryProjectRepository) -> None:
     with raises(EntityNotFoundError):
-        project = memory_project_repository.get('MISSING')
+        memory_project_repository.get('MISSING')
 
 
 def test_memory_project_repository_add(
