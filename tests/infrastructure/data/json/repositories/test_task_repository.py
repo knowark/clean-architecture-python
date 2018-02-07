@@ -3,7 +3,7 @@ from pytest import fixture, raises
 from taskit.application.models.task import Task
 from taskit.application.repositories.errors import EntityNotFoundError
 from taskit.application.repositories.task_repository import TaskRepository
-from taskit.infrastructure.data.json.task_repository import (
+from taskit.infrastructure.data.json.repositories.task_repository import (
     JsonTaskRepository)
 
 
