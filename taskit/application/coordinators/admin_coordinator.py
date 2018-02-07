@@ -23,8 +23,8 @@ class AdminCoordinator:
         new_project = Project(**old_project_dict)
         self.project_repository.update(new_project)
 
-    def delete_project(self, project_dict: Dict[str, any]):
-        project = Project(**project_dict)
+    def delete_project(self, uid: str):
+        project = self.project_repository.get(uid)
         self.project_repository.delete(project)
 
     def update_task(self, task_dict: Dict[str, any]):
@@ -35,6 +35,6 @@ class AdminCoordinator:
         new_task = Task(**old_task_dict)
         self.task_repository.update(new_task)
 
-    def delete_task(self, task_dict: Dict[str, any]):
-        task = Task(**task_dict)
+    def delete_task(self, uid: str):
+        task = self.task_repository.get(uid)
         self.task_repository.delete(task)
