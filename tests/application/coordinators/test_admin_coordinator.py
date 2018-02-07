@@ -63,12 +63,8 @@ def test_admin_coordinator_update_project(
 
 def test_admin_coordinator_delete_project(
         admin_coordinator: AdminCoordinator) -> None:
-    project_dict = {
-        'name': "Errands",
-        'uid': 'P-3'
-    }
-
-    admin_coordinator.delete_project(project_dict)
+    uid = 'P-3'
+    admin_coordinator.delete_project(uid)
     projects = admin_coordinator.project_repository.projects
     assert len(projects) == 2
     assert 'P-3' not in projects
@@ -94,12 +90,8 @@ def test_admin_coordinator_update_task(
 
 def test_admin_coordinator_delete_task(
         admin_coordinator: AdminCoordinator) -> None:
-    project_dict = {
-        'name': "Errands",
-        'uid': 'T-3'
-    }
-
-    admin_coordinator.delete_task(project_dict)
+    uid = 'T-3'
+    admin_coordinator.delete_task(uid)
     tasks = admin_coordinator.task_repository.tasks
     assert len(tasks) == 2
     assert 'T-3' not in tasks
