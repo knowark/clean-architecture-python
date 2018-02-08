@@ -8,6 +8,8 @@ from taskit.infrastructure.data.json.repositories.project_repository import (
     JsonProjectRepository)
 from taskit.infrastructure.data.json.repositories.task_repository import (
     JsonTaskRepository)
+from taskit.infrastructure.data.json.reporters.state_reporter import (
+    JsonStateReporter)
 from taskit.infrastructure.cli.taskit import cli, State
 
 
@@ -34,7 +36,8 @@ def build_state(json_file: str) -> State:
     task_repository = JsonTaskRepository(json_file)
     agenda_coordinator = AgendaCoordinator(project_repository, task_repository)
     admin_coordinator = AdminCoordinator(project_repository, task_repository)
-    state = State(admin_coordinator, agenda_coordinator)
+    state_reporter = JsonStateReporter(json_file)
+    state = State(admin_coordinator, agenda_coordinator, state_reporter)
     return state
 
 
