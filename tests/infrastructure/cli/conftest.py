@@ -16,6 +16,8 @@ from taskit.infrastructure.cli.taskit import State
 @pytest.fixture
 def mock_state() -> Mock:
     mock_state = Mock()
+    mock_state.state_reporter.list_tasks.return_value = [{'uid': 'T-1'}]
+    mock_state.state_reporter.list_projects.return_value = [{'uid': 'P-1'}]
     return mock_state
 
 
