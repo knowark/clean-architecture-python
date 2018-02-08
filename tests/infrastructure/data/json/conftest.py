@@ -16,9 +16,12 @@ def json_file(tmpdir_factory):
             'P-3': vars(Project("Errands", uid="P-3"))
         },
         "tasks": {
-            'T-1': vars(Task("Buy the milk", uid="T-1")),
-            'T-2': vars(Task("Make conference presentation", uid="T-2")),
-            'T-3': vars(Task("Clean the kitchen", uid="T-3"))
+            'T-1': vars(Task("Buy the milk",
+                             uid="T-1", project_id="P-1", stage="New")),
+            'T-2': vars(Task("Make conference presentation",
+                             uid="T-2", project_id="P-2", stage="Progress")),
+            'T-3': vars(Task("Clean the kitchen",
+                             uid="T-3", project_id="P-1", stage="Done"))
         },
         "_sequences": {
             "projects": 4,
