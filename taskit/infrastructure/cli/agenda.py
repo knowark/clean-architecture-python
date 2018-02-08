@@ -11,8 +11,10 @@ def agenda(obj):
 @click.pass_obj
 def new(obj):
     name = click.prompt("Please enter the task name", type=str)
+    project_id = click.prompt("Please enter the project ID", type=str) 
     task_dict = {
-        'name': name
+        'name': name,
+        'project_id': project_id
     }
     obj.agenda_coordinator.create_task(task_dict)
 
