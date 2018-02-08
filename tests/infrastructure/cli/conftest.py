@@ -8,6 +8,8 @@ from taskit.application.coordinators.admin_coordinator import (
     AdminCoordinator)
 from taskit.application.coordinators.agenda_coordinator import (
     AgendaCoordinator)
+from taskit.application.reporters.state_reporter import (
+    StateReporter, MemoryStateReporter)
 from taskit.infrastructure.cli.taskit import State
 
 
@@ -23,5 +25,6 @@ def state() -> State:
     task_repository = MemoryTaskRepository()
     agenda_coordinator = AgendaCoordinator(project_repository, task_repository)
     admin_coordinator = AgendaCoordinator(project_repository, task_repository)
-    state = State(admin_coordinator, agenda_coordinator)
+    state_reporter = MemoryStateReporter()
+    state = State(admin_coordinator, agenda_coordinator, state_reporter)
     return state
