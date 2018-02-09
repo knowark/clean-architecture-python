@@ -24,8 +24,23 @@ Abierto para extensión, cerrado para modificación.
 
 - D-ependency Inversion Principle
 
-Componentes
-***********
+Tipos de Programación
+*********************
+
+- Programación Estructurada
+
+Secuencia y selección e iteración. (def, if, while, for)
+
+- Programación Orientada a Objetos
+
+Clases, Objetos, Herencia.
+
+- Programación Funcional
+
+Funciones. No se persiste el estado.
 
 Modelado del Dominio
 ********************
+
+El núcleo de una aplicación es el dominio que tiene como propósito modelar.
+Este dominio se representa a través de lo que llamamos, la lógica de negocio.
