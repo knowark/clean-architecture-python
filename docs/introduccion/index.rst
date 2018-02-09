@@ -17,3 +17,12 @@ Beneficios
 - Mayor flexibilidad para añadir o remover funcionalidades del software
 - Diseño basado en componentes con responsabilidades bien definidas
 - Aplazamiento de decisiones críticas hasta el último momento requerido
+
+
+Usos
+****
+
+- Aplicaciones de negocios proyectadas para estar en operación indefinidamente.
+- Sistemas distribuidos que se beneficien de un diseño desacoplado (e.g. usando
+microservicios).
+- Infraestructuras heterogeneas a nivel de bases de datos, servicios web, etc.
