@@ -38,3 +38,14 @@ El Componente Principal
 
 El más sucio de los componentes. Es el encargado de instanciar el arbol de
 dependencias para crear la aplicación final.
+
+Las Pruebas
+***********
+
+Las pruebas o *tests* son el componente más externo de nuestra aplicación. A
+pesar de que no pueden asegurar que nuestras aplicaciones son correctas, si
+pueden informarnos que *no son incorrectas* y prevenir regresiones durante el
+desarrollo.
+
+.. todo::
+   agregar imagen de un escalador con su arnés
