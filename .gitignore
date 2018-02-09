@@ -101,8 +101,4 @@ ENV/
 .mypy_cache/
 
 # vscode
-<<<<<<< HEAD
 .vscode/
-=======
-.vscode
->>>>>>> b1dade71daf034b02857d59e874e8e9760127e9d
