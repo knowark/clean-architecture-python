@@ -1,4 +1,5 @@
 import os
+import sys
 from pathlib import Path
 from taskit.application.coordinators.admin_coordinator import (
     AdminCoordinator)
@@ -13,10 +14,9 @@ from taskit.infrastructure.data.json.reporters.state_reporter import (
 from taskit.infrastructure.cli.taskit import cli, State
 
 
-def prepare_json_database() -> str:
-    taskit_dir = Path.home().joinpath('.taskit')
-    os.makedirs(str(taskit_dir), exist_ok=True)
-    db_path = str(taskit_dir.joinpath('db.json'))
+def prepare_json_database(taskit_dir: str) -> str:
+    os.makedirs(taskit_dir, exist_ok=True)
+    db_path = os.sep.join([taskit_dir, 'db.json'])
     with open(db_path, 'a+') as f:
         f.seek(0)
         contents = f.read()
@@ -42,9 +42,17 @@ def build_state(json_file: str) -> State:
 
 
 def main():
-    db_file = prepare_json_database()
+    taskit_dir = (
+        os.environ.get('TASKIT_DIR') or str(Path.home().joinpath('.taskit'))
+    )
+    db_file = prepare_json_database(taskit_dir)
     state = build_state(db_file)
-    cli(obj=state)
+
+    try:
+        cli(obj=state)
+    except Exception as e:
+        print("\nEXECUTION ERROR:", e)
+        sys.exit(-1)
 
 
 if __name__ == '__main__':
