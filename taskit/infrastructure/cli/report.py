@@ -9,9 +9,13 @@ def report(obj):
 
 
 @report.command()
+@click.option('--project_id', default="")
 @click.pass_obj
-def tasks(obj):
-    result = obj.state_reporter.list_tasks()
+def tasks(obj, project_id):
+    if project_id:
+       result = obj.state_reporter.list_tasks_in_project(project_id)
+    else:
+        result = obj.state_reporter.list_tasks()
     click.echo(tabulate(result, headers='keys'))
 
 
