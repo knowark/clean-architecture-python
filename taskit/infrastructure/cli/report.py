@@ -10,10 +10,13 @@ def report(obj):
 
 @report.command()
 @click.option('--project_id', default="")
+@click.option('--stage', default="")
 @click.pass_obj
-def tasks(obj, project_id):
+def tasks(obj, project_id, stage):
     if project_id:
-       result = obj.state_reporter.list_tasks_in_project(project_id)
+        result = obj.state_reporter.list_tasks_in_project(project_id)
+    elif stage:
+        result = obj.state_reporter.list_tasks_in_stage(stage)
     else:
         result = obj.state_reporter.list_tasks()
     click.echo(tabulate(result, headers='keys'))
