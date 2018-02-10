@@ -1,6 +1,8 @@
 Descripción
 ***********
 
+Realizaremos una aplicación para gestionar nuestras tareas por realizar.
+En general, la estructura de la aplicación estará compuesta por:
 
 - **Tarea** (task): Unidad básica de gestión del trabajo cuyos atributos serán:
   - UID (uid: str)
