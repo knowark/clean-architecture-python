@@ -3,6 +3,7 @@
 .. image:: https://codecov.io/gh/nubark/clean-architecture-python/branch/master/graph/badge.svg
     :target: https://codecov.io/gh/nubark/clean-architecture-python
 
+
 Clean Architecture Python
 #########################
 
