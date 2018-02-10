@@ -1,4 +1,5 @@
-# Licencia
+Licencia
+########
 
 La documentación y el código de este repositorio se encuentra distribuida
 bajo la licencia MIT.
