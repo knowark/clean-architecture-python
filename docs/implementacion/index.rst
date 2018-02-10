@@ -13,6 +13,11 @@ La Regla de las Dependencias
 Las dependencias de una aplicación deben dirigirse en la vía de mayor
 abstracción.
 
+.. graphviz:: media/three-layers.dot
+
+
+   
+
 Capas y Fronteras
 *****************
 
@@ -26,12 +31,15 @@ Las consideraciones de infraestructura son sólo *detalles* del sistema.
 La base de datos, el framework web, las librerías de consola, son sólo
 herramientas de nuestras aplicaciones y no su esencia.
 
-```
-For the framework author, coupling to his or her own framework is not a risk...
 
-The author wants you to couple to the framework, because once coupled in this
-way, it is very hard to break away.
-```
+    *"For the framework author, coupling to his or her own framework
+    is not a risk..."*
+
+    *"The author wants you to couple to the framework, because once
+    coupled in this way, it is very hard to break away."*
+
+    *Uncle Bob*
+
 
 El Componente Principal
 ***********************
