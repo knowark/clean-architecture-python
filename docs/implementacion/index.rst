@@ -1,11 +1,17 @@
 Implementación
 ##############
 
+.. image:: media/clean-graph.jpg
+   :height: 400px
 
 !Arquitectura que Grita!
 ************************
 
 El propósito de nuestras aplicaciones debe hacerse notar de primera mano.
+
+.. image:: media/file-tree.png
+   :height: 400px
+   :width: 300px
 
 La Regla de las Dependencias
 ****************************
@@ -15,14 +21,14 @@ abstracción.
 
 .. graphviz:: media/three-layers.dot
 
-
-   
-
 Capas y Fronteras
 *****************
 
 Los componentes de una aplicación se comunican entre sí a través de fronteras
 bien definidas.
+
+.. image:: media/ports-adapters.png
+   :height: 250px
 
 Los Detalles
 ************
@@ -47,6 +53,8 @@ El Componente Principal
 El más sucio de los componentes. Es el encargado de instanciar el arbol de
 dependencias para crear la aplicación final.
 
+.. graphviz:: media/main.dot
+
 Las Pruebas
 ***********
 
@@ -55,5 +63,6 @@ pesar de que no pueden asegurar que nuestras aplicaciones son correctas, si
 pueden informarnos que *no son incorrectas* y prevenir regresiones durante el
 desarrollo.
 
-.. todo::
-   agregar imagen de un escalador con su arnés
+.. image:: media/climb.jpg
+   :width: 100%
+   :height: 250px
