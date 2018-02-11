@@ -1,13 +1,24 @@
 Nubark
 ######
 
-Información para decidir.
+.. image:: media/nubark.png
+   :width: 125px
+   :height: 125px
 
-[Nubark](https://www.nubark.com)
+*Información para decidir*
+
+Contacto
+********
+
+`Nubark's Website <https://www.nubark.com>`_
+
+info@nubark.com
+
+Acerca de
+*********
 
 .. toctree::
    :maxdepth: 2
-   :caption: Contenido:
 
    licencia.rst
    referencias.rst

@@ -1,0 +1,8 @@
+digraph foo {
+    "Presentation" -> "Business Logic";
+    "Data" -> "Business Logic";
+    "Main" -> "Presentation";
+    "Main" -> "Business Logic";
+    "Main" -> "Data";
+
+}
