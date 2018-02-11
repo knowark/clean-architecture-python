@@ -5,10 +5,9 @@ Clean Architecture o arquitectura limpia, es un compendio de principios y
 patrones de desarrollo que tienen como objetivo el facilitar el proceso de
 construcción del software, así como su mantenimiento.
 
-.. todo::
-   Agregar imágen introductoria
-
-Entre sus principales beneficios podemos encontrar:
+.. image:: media/galaxy.jpg
+   :height: 300px
+   :width: 100%
 
 Beneficios
 **********
@@ -24,5 +23,6 @@ Usos
 
 - Aplicaciones de negocios proyectadas para estar en operación indefinidamente.
 - Sistemas distribuidos que se beneficien de un diseño desacoplado (e.g. usando
-microservicios).
+  microservicios).
 - Infraestructuras heterogeneas a nivel de bases de datos, servicios web, etc.
+- Aplicaciones pensadas para ser extendidas por terceros a través de plugins.
