@@ -8,7 +8,6 @@ Clean Architecture con Python
 
 .. toctree::
    :maxdepth: 2
-   :caption: Contenido:
 
    introduccion/index.rst
    fundamentos/index.rst
