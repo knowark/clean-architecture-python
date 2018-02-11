@@ -9,5 +9,6 @@ Proyecto *Taskit*
 
    descripcion.rst
    preparacion.rst
+   ejecución.rst
 
 
