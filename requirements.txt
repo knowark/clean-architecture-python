@@ -42,7 +42,7 @@ pytest-cov==2.5.1
 pytest-cover==3.0.0
 pytest-coverage==0.0
 pytz==2018.3
-PyYAML==3.12
+PyYAML==5.4
 requests==2.18.4
 six==1.11.0
 snowballstemmer==1.2.1
