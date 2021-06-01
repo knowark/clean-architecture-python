@@ -52,6 +52,6 @@ sphinxcontrib-websupport==1.0.1
 tabulate==0.8.2
 tornado==4.5.2
 typed-ast==1.1.0
-urllib3==1.22
+urllib3==1.26.5
 watchdog==0.8.3
 wrapt==1.10.11
